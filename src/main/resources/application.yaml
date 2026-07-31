@@ -1,3 +1,21 @@
 spring:
   application:
     name: payments-api
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/payments}
+    username: ${SPRING_DATASOURCE_USERNAME:payments}
+    password: ${SPRING_DATASOURCE_PASSWORD:payments}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+    show-sql: true
+
+server:
+  port: 8080
